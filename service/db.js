@@ -12,14 +12,12 @@ pg.connect(function(err) {
 });
 
 function query(sql) {
-    return new Promise((resolve, reject)=>{
-            pg.query(sql, ((err,result) => {
-            if(err){
-                return reject(err);
-            }
-            return resolve(result);
-        }));
-    });
+    try {
+        const res = await pg.query(sql);
+        return res.rows[0];
+    } catch (error) {
+        console.log(error.stack);
+    }
 }
     
 
