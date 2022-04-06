@@ -7,6 +7,7 @@ const app = express();
 
 require("./config/passport");
 
+require('dotenv').config();
 app.use(cors());
 app.use(cookie());
 app.use(express.json());
