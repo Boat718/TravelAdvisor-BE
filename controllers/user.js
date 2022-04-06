@@ -48,7 +48,7 @@ const loginUser = async (req, res) => {
             return res.status(200).send({message:"Your email or password is wrong"});
         }
     } catch (error) {
-        res.send("ERROR")
+        res.send(error)
         console.log(error);
     }
 }
