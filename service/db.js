@@ -1,8 +1,9 @@
-const mysql = require('mysql2');
+const {Client} = require("pg");
 const dbConfig = require('../config/dbConfig');
 
-const connection = mysql.createConnection(dbConfig.db);
-connection.connect(function(err) {
+const pg = new Client(dbConfig.db);
+
+pg.connect(function(err) {
     if (err) {
         console.error('error connecting: ' + err.stack);
         return;
@@ -12,7 +13,7 @@ connection.connect(function(err) {
 
 function query(sql) {
     return new Promise((resolve, reject)=>{
-        connection.query(sql, ((err,result) => {
+            pg.query(sql, ((err,result) => {
             if(err){
                 return reject(err);
             }

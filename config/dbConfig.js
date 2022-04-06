@@ -1,9 +1,9 @@
 const config = {
     db: {
-        host:"localhost",
-        user:"root",
-        password:"password",
-        database:"traveladvisor"
+        connectionString: process.env.DATABASE_URL,
+        ssl: {
+          rejectUnauthorized: false
+        }
     }
 };
 
