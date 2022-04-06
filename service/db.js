@@ -11,7 +11,7 @@ pg.connect(function(err) {
     console.log('connected server');
 });
 
-function query(sql,values) {
+async function query(sql,values) {
     try {
         const res = await pg.query(sql,values);
         return res.rows[0];
