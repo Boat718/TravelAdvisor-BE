@@ -16,6 +16,6 @@ app.use('/users',userRoutes);
 
 
 
-app.listen((process.env.PORT || 4500),()=>{
-    console.log(` Server is running at ${process.env.PORT}` );
+app.listen((process.env.PORT || 5000),()=>{
+    console.log(` Server is running ` );
 })
