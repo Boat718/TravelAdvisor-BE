@@ -1,7 +1,7 @@
 const db = require('./db');
 
 async function addUser(username, email, password) {
-    await db.query( 'INSERT INTO traveladvisor (username, email, password) VALUES ($1, $2, $3) RETURNING *;',[username, email, password]);
+    await db.query( 'INSERT INTO traveladvisor (username, email, password) VALUES ($1, $2, $3);',[username, email, password]);
 }
 
 async function getUser() {

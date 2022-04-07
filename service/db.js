@@ -14,7 +14,8 @@ pg.connect(function(err) {
 async function query(sql,values) {
     try {
         const res = await pg.query(sql,values);
-        return res.rows[0];
+        // console.log(res.rows);
+        return res.rows;
     } catch (error) {
         console.log(error.stack);
     }
